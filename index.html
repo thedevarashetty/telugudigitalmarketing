@@ -943,6 +943,23 @@ text-align:center;padding:1.2rem;border-radius:16px;transition:all .4s ease;curs
   }
 }
 
+
+/* RESPONSIVE DEVICE ADAPTATION */
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+  .audience-grid{grid-template-columns:repeat(3,1fr)!important;}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media (max-width:768px){
+  .hero-inner,.services-layout,.about-grid,.contact-grid{grid-template-columns:1fr!important;}
+  .hero-card{width:100%!important;max-width:420px!important;justify-self:center!important;}
+  .stats-inner{grid-template-columns:repeat(2,1fr)!important;}
+  .audience-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .curriculum-grid,.testimonials-grid,.footer-top{grid-template-columns:1fr!important;}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center;}
+  html,body{overflow-x:hidden;}
+}
+
 </style>
 
 
