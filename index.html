@@ -22,13 +22,13 @@
     --ff-body: 'Inter', sans-serif;
   }
 
-  body { font-family: var(--ff-body); color: var(--text-primary); background: var(--bg-white); line-height: 1.6; }
+  body { font-family: var(--ff-body); color: var(--text-primary); background: var(--bg-white); line-height: 1.6; padding-top:64px; }
 
   .site-wrapper { max-width: 100%; overflow-x: hidden; }
 
   /* NAV */
   nav {
-    position: sticky; top: 0; z-index: 100;
+    position: fixed; top: 0; left:0; width:100%; z-index:9999;
     background: rgba(255,255,255,0.96);
     backdrop-filter: blur(12px);
     border-bottom: 0.5px solid var(--border);
@@ -333,7 +333,15 @@
     margin-top: 4px; font-weight: 500;
   }
 
-  /* SECTIONS */
+  
+.stat-item{
+text-align:center;padding:1.2rem;border-radius:16px;transition:all .4s ease;cursor:pointer;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);
+}
+.stat-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(20,184,166,.12));opacity:0;transition:.4s;}
+.stat-item:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 15px 35px rgba(0,0,0,.25);border-color:#14B8A6;}
+.stat-item:hover::before{opacity:1;}
+
+/* SECTIONS */
   .section { padding: 5rem 2rem; }
   .section-alt { background: var(--bg-surface); }
 
@@ -952,29 +960,18 @@
       <div class="nav-brand"><span>AI</span> Telugu<br>Digital Marketing</div>
     </div>
     <ul class="nav-links">
-      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('home');return false;">Home</a></li>
-      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('course');return false;">Course</a></li>
-      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('services');return false;">Services</a></li>
-      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('about');return false;">About</a></li>
-      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('contact');return false;">Contact</a></li>
+      <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+      <li><a href="#" onclick="showPage('course');return false;">Course</a></li>
+      <li><a href="#" onclick="showPage('services');return false;">Services</a></li>
+      <li><a href="#" onclick="showPage('about');return false;">About</a></li>
+      <li><a href="#" onclick="showPage('testimonials');return false;">Reviews</a></li>
+      <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
+      <li><a href="#" onclick="showPage('privacy');return false;">Privacy</a></li>
     </ul>
     <a class="nav-cta" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">
       <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enroll Now
     </a>
   </nav>
-
-  <!-- PAGE TABS (mobile-friendly nav override) -->
-  <div style="padding: 1rem 2rem 0; background: white; border-bottom: 0.5px solid var(--border);">
-    <div class="page-tabs">
-      <button class="page-tab active" onclick="showPage('home')">Home</button>
-      <button class="page-tab" onclick="showPage('course')">Course</button>
-      <button class="page-tab" onclick="showPage('services')">Services</button>
-      <button class="page-tab" onclick="showPage('about')">About</button>
-      <button class="page-tab" onclick="showPage('testimonials')">Reviews</button>
-      <button class="page-tab" onclick="showPage('contact')">Contact</button>
-      <button class="page-tab" onclick="showPage('privacy')">Privacy</button>
-    </div>
-  </div>
 
   <!-- ========== HOME ========== -->
   <div id="page-home" class="page-view active">
@@ -1023,7 +1020,7 @@
             <div class="pricing-row">
               <div>
                 <div class="price-original">₹14,999</div>
-                <div class="price-offer">₹4,999</div>
+                <div class="price-offer" data-target="4999">0</div>
               </div>
               <div class="price-save">Save 67%</div>
             </div>
@@ -1040,11 +1037,11 @@
     <div class="stats-bar">
       <div class="stats-inner">
         <div class="stat-item">
-          <div class="stat-number">500<span>+</span></div>
+          <div class="stat-number" data-target="500">0</div>
           <div class="stat-label">Students Enrolled</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">12<span>+</span></div>
+          <div class="stat-number" data-target="12">0</div>
           <div class="stat-label">Modules Covered</div>
         </div>
         <div class="stat-item">
@@ -1052,7 +1049,7 @@
           <div class="stat-label">Launch Price</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">100<span>%</span></div>
+          <div class="stat-number" data-target="100">0</div>
           <div class="stat-label">AI Powered Learning</div>
         </div>
       </div>
@@ -1699,5 +1696,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
  },{threshold:0.5});
 
  counters.forEach(c=>observer.observe(c));
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+const counters=document.querySelectorAll('.stat-number[data-target]');
+const run=(el)=>{
+ let target=parseInt(el.dataset.target),cur=0;
+ const step=()=>{cur+=Math.ceil(target/60); if(cur>target) cur=target;
+ el.textContent=(el.dataset.target=="4999"?"₹":"")+cur+(target!=4999?"+":"");
+ if(cur<target) requestAnimationFrame(step);
+ };
+ step();
+};
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.textContent='0';run(e.target);}});
+},{threshold:.5});
+counters.forEach(c=>obs.observe(c));
 });
 </script>
