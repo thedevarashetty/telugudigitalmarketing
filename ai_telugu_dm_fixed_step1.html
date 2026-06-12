@@ -1,0 +1,1702 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --royal-blue: #2563EB;
+    --midnight-navy: #0F172A;
+    --modern-teal: #14B8A6;
+    --blue-light: #EFF6FF;
+    --teal-light: #F0FDFA;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --bg-white: #FFFFFF;
+    --bg-surface: #F8FAFC;
+    --border: rgba(15,23,42,0.08);
+    --ff-display: 'Outfit', sans-serif;
+    --ff-body: 'Inter', sans-serif;
+  }
+
+  body { font-family: var(--ff-body); color: var(--text-primary); background: var(--bg-white); line-height: 1.6; }
+
+  .site-wrapper { max-width: 100%; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-logo-icon {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .logo-mark {
+    width: 36px; height: 36px; position: relative;
+  }
+
+  .nav-brand {
+    font-family: var(--ff-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--midnight-navy);
+    line-height: 1.2;
+  }
+
+  .nav-brand span { color: var(--royal-blue); }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+    font-size: 13.5px; font-weight: 500;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--midnight-navy); }
+
+  .nav-cta {
+    background: var(--royal-blue);
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: #1D4ED8; }
+
+  /* HERO */
+  .hero {
+    padding: 3rem 2rem 5rem;
+    background: linear-gradient(180deg, #F8FAFF 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; top: -80px; right: -120px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -40px; left: -60px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(20,184,166,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner{
+    max-width:1280px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 420px;
+    gap:60px;
+    align-items:center;
+    width:100%;
+}
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--blue-light);
+    color: var(--royal-blue);
+    font-size: 12px; font-weight: 600;
+    padding: 5px 12px; border-radius: 20px;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    border: 0.5px solid rgba(37,99,235,0.2);
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--royal-blue);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: var(--ff-display);
+    font-size: 3rem; font-weight: 800;
+    line-height: 1.15;
+    color: var(--midnight-navy);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 .accent-blue { color: var(--royal-blue); }
+  .hero h1 .accent-teal { color: var(--modern-teal); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    background: var(--royal-blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700; font-size: 15px;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.25);
+  }
+
+  .btn-primary:hover { background: #1D4ED8; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: white;
+    color: var(--midnight-navy);
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600; font-size: 15px;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--royal-blue); color: var(--royal-blue); }
+
+  .hero-trust {
+    display: flex; gap: 2rem; align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; color: var(--text-secondary); font-weight: 500;
+  }
+
+  .trust-icon { color: var(--modern-teal); font-size: 16px; }
+
+  /* HERO CARD */
+  .hero-card {
+  background: white;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(15,23,42,0.1);
+  width:420px;
+  max-width:420px;
+  justify-self:end;
+}
+
+  .card-header {
+    background: var(--midnight-navy);
+    padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .card-title {
+    font-family: var(--ff-display);
+    color: white; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+
+  .card-badge {
+    background: var(--modern-teal);
+    color: white; font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .card-body { padding: 1.5rem; }
+
+  .course-name {
+    font-family: var(--ff-display);
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--midnight-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .course-lang {
+    font-size: 12.5px; color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .modules-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; margin-bottom: 1.25rem;
+  }
+
+  .module-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-secondary);
+    background: var(--bg-surface);
+    padding: 7px 10px; border-radius: 7px;
+  }
+
+  .module-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--royal-blue); flex-shrink: 0; }
+
+  .pricing-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 1rem; background: var(--blue-light);
+    border-radius: 10px; margin-bottom: 1rem;
+  }
+
+  .price-original {
+    font-size: 13px; color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  .price-offer {
+    font-family: var(--ff-display);
+    font-size: 1.6rem; font-weight: 800;
+    color: var(--royal-blue);
+  }
+
+  .price-save {
+    background: #DCFCE7; color: #166534;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px;
+    margin-left: auto;
+  }
+
+  .card-cta {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 10px;
+    font-weight: 700; font-size: 14px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s;
+  }
+
+  .card-cta:hover { background: #1ebe5a; }
+
+  /* STATS */
+  .stats-bar {
+    background: var(--midnight-navy);
+    padding: 2rem;
+  }
+
+  .stats-inner {
+    max-width: 960px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item { text-align: center; padding: 0.5rem; }
+
+  .stat-number {
+    font-family: var(--ff-display);
+    font-size: 2rem; font-weight: 800;
+    color: white; line-height: 1.1;
+  }
+
+  .stat-number span { color: var(--modern-teal); }
+
+  .stat-label {
+    font-size: 12.5px; color: rgba(255,255,255,0.55);
+    margin-top: 4px; font-weight: 500;
+  }
+
+  /* SECTIONS */
+  .section { padding: 5rem 2rem; }
+  .section-alt { background: var(--bg-surface); }
+
+  .section-inner { max-width: 960px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 11.5px; font-weight: 700;
+    color: var(--modern-teal);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: 2rem; font-weight: 800;
+    color: var(--midnight-navy);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem; color: var(--text-secondary);
+    max-width: 520px; line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* AUDIENCE */
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  }
+
+  .audience-card {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .audience-card:hover {
+    border-color: var(--royal-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,99,235,0.08);
+  }
+
+  .audience-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin: 0 auto 0.75rem;
+  }
+
+  .audience-label {
+    font-size: 13px; font-weight: 600;
+    color: var(--midnight-navy);
+  }
+
+  /* CURRICULUM */
+  .curriculum-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+
+  .curriculum-item {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.2s;
+  }
+
+  .curriculum-item:hover {
+    border-color: rgba(37,99,235,0.3);
+    box-shadow: 0 4px 20px rgba(37,99,235,0.06);
+  }
+
+  .curr-num {
+    font-family: var(--ff-display);
+    font-size: 11px; font-weight: 700;
+    color: var(--royal-blue);
+    background: var(--blue-light);
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .curr-title {
+    font-size: 14px; font-weight: 600;
+    color: var(--midnight-navy);
+    margin-bottom: 3px;
+  }
+
+  .curr-desc {
+    font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;
+  }
+
+  /* SERVICES */
+  .services-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+  }
+
+  .service-card {
+    background: var(--midnight-navy);
+    border-radius: 20px; padding: 2.5rem;
+    position: relative; overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 70%);
+  }
+
+  .service-title {
+    font-family: var(--ff-display);
+    font-size: 1.4rem; font-weight: 800;
+    color: white; margin-bottom: 0.5rem;
+  }
+
+  .service-sub {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    margin-bottom: 1.75rem;
+  }
+
+  .service-features {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .service-feature {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 13.5px; color: rgba(255,255,255,0.8);
+  }
+
+  .feature-check {
+    width: 20px; height: 20px;
+    background: rgba(20,184,166,0.2);
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px; color: var(--modern-teal);
+  }
+
+  .btn-teal {
+    background: var(--modern-teal);
+    color: white; padding: 13px 24px;
+    border-radius: 10px; font-weight: 700; font-size: 14px;
+    text-decoration: none; display: inline-flex;
+    align-items: center; gap: 8px;
+    transition: background 0.2s;
+  }
+
+  .btn-teal:hover { background: #0D9488; }
+
+  .service-info { padding: 1rem 0; }
+
+  .info-item {
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .info-item:last-child { border-bottom: none; }
+
+  .info-title {
+    font-size: 14px; font-weight: 600;
+    color: var(--midnight-navy); margin-bottom: 3px;
+  }
+
+  .info-desc {
+    font-size: 13px; color: var(--text-secondary); line-height: 1.5;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+
+  .testimonial-card {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 16px; padding: 1.5rem;
+  }
+
+  .stars {
+    color: #F59E0B; font-size: 13px; letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-text {
+    font-size: 13.5px; color: var(--text-secondary);
+    line-height: 1.65; margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .author-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px; color: white;
+  }
+
+  .author-name { font-size: 13px; font-weight: 600; color: var(--midnight-navy); }
+  .author-role { font-size: 11.5px; color: var(--text-muted); }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--midnight-navy);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 70%);
+  }
+
+  .cta-section h2 {
+    font-family: var(--ff-display);
+    font-size: 2.25rem; font-weight: 800;
+    color: white; margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .cta-section p {
+    font-size: 1rem; color: rgba(255,255,255,0.55);
+    max-width: 480px; margin: 0 auto 2.5rem;
+    line-height: 1.7; position: relative;
+  }
+
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; position: relative; }
+
+  .price-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    margin-bottom: 1.5rem; position: relative;
+  }
+
+  .price-tag strong { color: white; }
+
+  /* FOOTER */
+  footer {
+    background: #060E1E;
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 960px; margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand-name {
+    font-family: var(--ff-display);
+    font-size: 14px; font-weight: 700;
+    color: white; margin-bottom: 0.5rem;
+  }
+
+  .footer-brand-name span { color: var(--royal-blue); }
+
+  .footer-tagline {
+    font-size: 12px; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.05em; margin-bottom: 1rem;
+  }
+
+  .footer-desc {
+    font-size: 13px; color: rgba(255,255,255,0.45);
+    line-height: 1.65;
+  }
+
+  .footer-col-title {
+    font-size: 11px; font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.25);
+  }
+
+  .footer-legal {
+    display: flex; gap: 1.5rem;
+  }
+
+  .footer-legal a {
+    font-size: 12px; color: rgba(255,255,255,0.25);
+    text-decoration: none;
+  }
+
+  /* NAV TABS */
+  .page-tabs {
+    display: flex; gap: 4px;
+    background: var(--bg-surface);
+    padding: 4px; border-radius: 10px;
+    margin-bottom: 3rem; width: fit-content;
+    border: 0.5px solid var(--border);
+  }
+
+  .page-tab {
+    padding: 7px 16px; border-radius: 7px;
+    font-size: 13px; font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    border: none; background: none;
+    font-family: var(--ff-body);
+  }
+
+  .page-tab.active {
+    background: white;
+    color: var(--midnight-navy);
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.1);
+  }
+
+  .page-view { display: none; }
+  .page-view.active { display: block; }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+
+  .about-visual {
+    background: var(--midnight-navy);
+    border-radius: 20px; padding: 2.5rem;
+    text-align: center;
+  }
+
+  .about-logo-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-big {
+    font-family: var(--ff-display);
+    font-size: 2rem; font-weight: 800; color: white;
+    margin-bottom: 4px;
+  }
+
+  .brand-big span { color: var(--royal-blue); }
+
+  .brand-tagline-big {
+    font-size: 12px; color: var(--modern-teal);
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  }
+
+  .about-pillars {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .pillar {
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    display: flex; align-items: center; gap: 12px;
+    text-align: left;
+  }
+
+  .pillar-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px; background: rgba(20,184,166,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--modern-teal); font-size: 16px; flex-shrink: 0;
+  }
+
+  .pillar-text { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  }
+
+  .contact-info-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--royal-blue); font-size: 18px; flex-shrink: 0;
+  }
+
+  .contact-detail-label {
+    font-size: 11.5px; font-weight: 600; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;
+  }
+
+  .contact-detail-value {
+    font-size: 14px; color: var(--midnight-navy); font-weight: 500;
+  }
+
+  .contact-form-card {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+  }
+
+  .form-title {
+    font-family: var(--ff-display);
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--midnight-navy); margin-bottom: 1.5rem;
+  }
+
+  .form-field { margin-bottom: 1rem; }
+
+  .form-label {
+    display: block; font-size: 12.5px; font-weight: 600;
+    color: var(--text-secondary); margin-bottom: 5px;
+  }
+
+  .form-input {
+    width: 100%; padding: 10px 14px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px; font-size: 14px;
+    font-family: var(--ff-body);
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    outline: none; transition: border-color 0.2s;
+  }
+
+  .form-input:focus { border-color: var(--royal-blue); background: white; }
+
+  .form-select {
+    width: 100%; padding: 10px 14px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px; font-size: 14px;
+    background: var(--bg-surface);
+    color: var(--text-primary); outline: none;
+  }
+
+  .whatsapp-btn-big {
+    width: 100%; background: #25D366; color: white;
+    border: none; padding: 14px;
+    border-radius: 10px; font-weight: 700; font-size: 14px;
+    cursor: pointer; display: flex;
+    align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s; font-family: var(--ff-body);
+  }
+
+  .whatsapp-btn-big:hover { background: #1ebe5a; }
+
+  /* PRIVACY PAGE */
+  .privacy-content { max-width: 680px; }
+  .privacy-content h3 {
+    font-family: var(--ff-display);
+    font-size: 1rem; font-weight: 700;
+    color: var(--midnight-navy); margin: 1.5rem 0 0.5rem;
+  }
+
+  .privacy-content p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .privacy-content ul {
+    padding-left: 1.25rem; margin-bottom: 0.75rem;
+  }
+
+  .privacy-content li {
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 4px;
+  }
+
+  /* LOGO MARK SVG  */
+  .logo-svg-mark {
+    width: 32px; height: 32px;
+  }
+
+/* ===== MOBILE RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+    height: auto;
+    min-height: 64px;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hero,
+  .section,
+  .cta-section,
+  footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero-inner,
+  .services-layout,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .stats-inner,
+  .audience-grid,
+  .curriculum-grid,
+  .testimonials-grid,
+  .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    scrollbar-width: thin;
+  }
+
+  .page-tab {
+    flex: 0 0 auto;
+  }
+
+  .footer-bottom,
+  .cta-buttons,
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .card-cta,
+  .whatsapp-btn-big {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .service-card,
+  .contact-form-card,
+  .hero-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .audience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+</style>
+
+
+
+<div class="site-wrapper">
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <svg class="logo-svg-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 8 L68 24 L68 44 L40 32 L12 44 L12 24 Z" fill="#2563EB"/>
+        <path d="M40 32 L68 44 L68 64 L40 52 L12 64 L12 44 Z" fill="#0F172A"/>
+        <path d="M28 58 L40 64 L52 58 L40 52 Z" fill="#14B8A6"/>
+      </svg>
+      <div class="nav-brand"><span>AI</span> Telugu<br>Digital Marketing</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('home');return false;">Home</a></li>
+      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('course');return false;">Course</a></li>
+      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('services');return false;">Services</a></li>
+      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('about');return false;">About</a></li>
+      <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('contact');return false;">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enroll Now
+    </a>
+  </nav>
+
+  <!-- PAGE TABS (mobile-friendly nav override) -->
+  <div style="padding: 1rem 2rem 0; background: white; border-bottom: 0.5px solid var(--border);">
+    <div class="page-tabs">
+      <button class="page-tab active" onclick="showPage('home')">Home</button>
+      <button class="page-tab" onclick="showPage('course')">Course</button>
+      <button class="page-tab" onclick="showPage('services')">Services</button>
+      <button class="page-tab" onclick="showPage('about')">About</button>
+      <button class="page-tab" onclick="showPage('testimonials')">Reviews</button>
+      <button class="page-tab" onclick="showPage('contact')">Contact</button>
+      <button class="page-tab" onclick="showPage('privacy')">Privacy</button>
+    </div>
+  </div>
+
+  <!-- ========== HOME ========== -->
+  <div id="page-home" class="page-view active">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge">
+            <div class="badge-dot"></div>
+            Now enrolling — Limited seats
+          </div>
+          <h1>Master <span class="accent-blue">AI-Powered</span><br>Digital Marketing<br>in <span class="accent-teal">Telugu</span></h1>
+          <p class="hero-sub">Learn Meta Ads, Automation & Growth Strategies in your language. Built for Telugu-speaking students, freelancers & business owners.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">
+              <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+              Enroll Now — ₹4,999
+            </a>
+            <a class="btn-secondary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('course');return false;">
+              <i class="ti ti-play" aria-hidden="true"></i>
+              View Curriculum
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item"><i class="ti ti-live-view trust-icon" aria-hidden="true"></i> Live Training</div>
+            <div class="trust-item"><i class="ti ti-briefcase trust-icon" aria-hidden="true"></i> Job Assistance</div>
+            <div class="trust-item"><i class="ti ti-robot trust-icon" aria-hidden="true"></i> AI Tools Training</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-header">
+            <span class="card-title">AI Powered Course</span>
+            <span class="card-badge">LIVE</span>
+          </div>
+          <div class="card-body">
+            <div class="course-name">AI Powered Digital Marketing Course</div>
+            <div class="course-lang">Telugu Medium · English Material · Live Batches</div>
+            <div class="modules-grid">
+              <div class="module-item"><div class="module-dot"></div>Meta Ads</div>
+              <div class="module-item"><div class="module-dot"></div>AI Tools</div>
+              <div class="module-item"><div class="module-dot"></div>SEO & Content</div>
+              <div class="module-item"><div class="module-dot"></div>Automation</div>
+              <div class="module-item"><div class="module-dot"></div>Analytics</div>
+              <div class="module-item"><div class="module-dot"></div>Freelancing</div>
+            </div>
+            <div class="pricing-row">
+              <div>
+                <div class="price-original">₹14,999</div>
+                <div class="price-offer">₹4,999</div>
+              </div>
+              <div class="price-save">Save 67%</div>
+            </div>
+            <button class="card-cta">
+              <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+              Enroll via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-number">500<span>+</span></div>
+          <div class="stat-label">Students Enrolled</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12<span>+</span></div>
+          <div class="stat-label">Modules Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">₹4,999</div>
+          <div class="stat-label">Launch Price</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100<span>%</span></div>
+          <div class="stat-label">AI Powered Learning</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHO IS IT FOR -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">Who This Is For</div>
+        <h2 class="section-title">Built for Every Telugu<br>Professional & Learner</h2>
+        <p class="section-sub">Whether you're a student, a business owner, or a working professional — this course is designed around your goals.</p>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <div class="audience-icon" style="background:#EFF6FF; color:#2563EB;"><i class="ti ti-school" aria-hidden="true"></i></div>
+            <div class="audience-label">Students</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon" style="background:#F0FDFA; color:#14B8A6;"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
+            <div class="audience-label">Job Seekers</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon" style="background:#FFF7ED; color:#EA580C;"><i class="ti ti-device-laptop" aria-hidden="true"></i></div>
+            <div class="audience-label">Freelancers</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon" style="background:#F0FDF4; color:#16A34A;"><i class="ti ti-building-store" aria-hidden="true"></i></div>
+            <div class="audience-label">Business Owners</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon" style="background:#FAF5FF; color:#7C3AED;"><i class="ti ti-user-check" aria-hidden="true"></i></div>
+            <div class="audience-label">Professionals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI SERVICES PREVIEW -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-eyebrow">Also Offering</div>
+        <h2 class="section-title">Meta Ads Management<br>for Your Business</h2>
+        <p class="section-sub">Run high-converting Facebook & Instagram ad campaigns managed by certified professionals. From strategy to reporting.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn-primary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('services');return false;">View Services</a>
+          <a class="btn-secondary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">Book Free Consultation</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== COURSE ========== -->
+  <div id="page-course" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">The Curriculum</div>
+        <h2 class="section-title">AI Powered Digital Marketing<br>Course — Full Syllabus</h2>
+        <p class="section-sub">12 comprehensive modules. Taught live in Telugu. English study material included. Real projects, real results.</p>
+        <div class="curriculum-grid">
+          <div class="curriculum-item">
+            <div class="curr-num">01</div>
+            <div>
+              <div class="curr-title">Digital Marketing Fundamentals</div>
+              <div class="curr-desc">The modern marketing landscape, channels overview, Telugu market context</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">02</div>
+            <div>
+              <div class="curr-title">Meta Ads — Facebook & Instagram</div>
+              <div class="curr-desc">Campaign setup, audience targeting, creative strategy, budget optimization</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">03</div>
+            <div>
+              <div class="curr-title">AI Tools for Marketing</div>
+              <div class="curr-desc">ChatGPT, Gemini, Canva AI, automation workflows, content generation</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">04</div>
+            <div>
+              <div class="curr-title">SEO & Content Marketing</div>
+              <div class="curr-desc">Google ranking, keyword research, blog strategy, on-page optimization</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">05</div>
+            <div>
+              <div class="curr-title">Lead Generation Systems</div>
+              <div class="curr-desc">Landing pages, lead magnets, WhatsApp funnels, CRM basics</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">06</div>
+            <div>
+              <div class="curr-title">Analytics & Reporting</div>
+              <div class="curr-desc">Meta Business Suite, Google Analytics 4, data interpretation, KPI tracking</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">07</div>
+            <div>
+              <div class="curr-title">Social Media Marketing</div>
+              <div class="curr-desc">Instagram growth, Reels strategy, LinkedIn, YouTube basics</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">08</div>
+            <div>
+              <div class="curr-title">Email & WhatsApp Marketing</div>
+              <div class="curr-desc">Broadcast campaigns, automation, subscriber growth, open rate optimization</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">09</div>
+            <div>
+              <div class="curr-title">E-commerce & Drop Shipping</div>
+              <div class="curr-desc">Shopify basics, product ads, ROAS optimization, scaling</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">10</div>
+            <div>
+              <div class="curr-title">Freelancing & Agency Setup</div>
+              <div class="curr-desc">Fiverr/Upwork profiles, client pitching, pricing, contracts</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">11</div>
+            <div>
+              <div class="curr-title">Automation & Growth Hacking</div>
+              <div class="curr-desc">Make.com, Zapier, scheduling tools, workflow automation for scale</div>
+            </div>
+          </div>
+          <div class="curriculum-item">
+            <div class="curr-num">12</div>
+            <div>
+              <div class="curr-title">Capstone Project + Certification</div>
+              <div class="curr-desc">Live campaign launch, mentor review, certificate of completion</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem; background:var(--midnight-navy); border-radius:20px; padding:2.5rem; display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+          <div style="flex:1; min-width:240px;">
+            <div style="font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:white;margin-bottom:0.5rem;">Launch Price: <span style="color:var(--modern-teal);">₹4,999</span></div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:0.25rem;">Original Price: <s>₹14,999</s></div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);">Live training · Telugu medium · Certificate included</div>
+          </div>
+          <button class="card-cta" style="width:auto;padding:14px 28px;border-radius:10px;font-size:15px;">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+            Enroll Now via WhatsApp
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== SERVICES ========== -->
+  <div id="page-services" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">What We Manage</div>
+        <h2 class="section-title">Meta Ads Management<br>That Drives Real Results</h2>
+        <p class="section-sub">Full-service Facebook & Instagram advertising for real estate, healthcare, and local businesses in AP/Telangana.</p>
+        <div class="services-layout">
+          <div class="service-card">
+            <div class="service-title">Meta Ads Management</div>
+            <div class="service-sub">Monthly retainer · Results-focused</div>
+            <ul class="service-features">
+              <li class="service-feature"><div class="feature-check">✓</div> Facebook Ads Campaign Setup</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Instagram Ads Management</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Lead Generation Campaigns</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Campaign Optimization (Weekly)</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Conversion Tracking Setup</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Monthly Performance Report</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Audience Research & Strategy</li>
+              <li class="service-feature"><div class="feature-check">✓</div> Creative Brief Guidance</li>
+            </ul>
+            <a class="btn-teal" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">
+              <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+              Book Free Consultation
+            </a>
+          </div>
+          <div class="service-info">
+            <div class="info-item">
+              <div class="info-title">Who is this for?</div>
+              <div class="info-desc">Real estate developers, healthcare clinics, local businesses, and service brands wanting qualified leads from Meta platforms.</div>
+            </div>
+            <div class="info-item">
+              <div class="info-title">How does it work?</div>
+              <div class="info-desc">We start with a free strategy call, audit your current presence, build a campaign roadmap, and begin running ads within 3–5 working days.</div>
+            </div>
+            <div class="info-item">
+              <div class="info-title">What do you get every month?</div>
+              <div class="info-desc">Weekly optimizations, creative feedback, detailed reporting, and a dedicated point of contact for updates and questions.</div>
+            </div>
+            <div class="info-item">
+              <div class="info-title">Ready to start?</div>
+              <div class="info-desc">WhatsApp us to book a free 30-minute consultation. No commitments. We'll assess if we're a fit first.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <div id="page-about" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div>
+            <div class="section-eyebrow">Our Mission</div>
+            <h2 class="section-title">Empowering Telugu Speakers with AI Marketing Skills</h2>
+            <p style="font-size:1rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">We created AI Telugu Digital Marketing because we saw a gap: world-class digital marketing education existed in English — but for Telugu-speaking professionals, the language barrier was holding them back.</p>
+            <p style="font-size:1rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">Our mission is simple: teach AI-powered marketing in Telugu, with real tools, live projects, and practical skills that translate directly into income.</p>
+            <p style="font-size:1rem;color:var(--text-secondary);line-height:1.75;margin-bottom:2rem;">We are not a coaching institute. We are a technology-first education brand built for the modern professional in AP and Telangana.</p>
+            <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+              <div style="text-align:center;">
+                <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:800;color:var(--royal-blue);">500+</div>
+                <div style="font-size:12px;color:var(--text-muted);font-weight:600;">Students</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:800;color:var(--modern-teal);">AP/TG</div>
+                <div style="font-size:12px;color:var(--text-muted);font-weight:600;">Market Focus</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-family:var(--ff-display);font-size:1.75rem;font-weight:800;color:var(--midnight-navy);">2-in-1</div>
+                <div style="font-size:12px;color:var(--text-muted);font-weight:600;">Edu + Agency</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="about-logo-wrap">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:64px;margin:0 auto 1rem;display:block;">
+                <path d="M40 8 L68 24 L68 44 L40 32 L12 44 L12 24 Z" fill="#2563EB"/>
+                <path d="M40 32 L68 44 L68 64 L40 52 L12 64 L12 44 Z" fill="rgba(255,255,255,0.15)"/>
+                <path d="M28 58 L40 64 L52 58 L40 52 Z" fill="#14B8A6"/>
+              </svg>
+              <div class="brand-big"><span>AI</span> Telugu</div>
+              <div class="brand-tagline-big">Learn • Automate • Grow</div>
+            </div>
+            <div class="about-pillars">
+              <div class="pillar">
+                <div class="pillar-icon"><i class="ti ti-language" aria-hidden="true"></i></div>
+                <div class="pillar-text">Telugu-first education. English material.</div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon"><i class="ti ti-robot" aria-hidden="true"></i></div>
+                <div class="pillar-text">AI tools integrated in every module.</div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon"><i class="ti ti-certificate" aria-hidden="true"></i></div>
+                <div class="pillar-text">Industry-recognized certification.</div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+                <div class="pillar-text">Active student community on WhatsApp.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <div id="page-testimonials" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">Student Results</div>
+        <h2 class="section-title">What Our Students Say</h2>
+        <p class="section-sub">Real results from Telugu-speaking professionals who enrolled and transformed their careers.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"This course is the best investment I made in 2024. Learning Meta Ads in Telugu made everything so clear — I landed my first freelance client within 3 weeks of completing the course."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#2563EB;">RK</div>
+              <div>
+                <div class="author-name">Ravi Kumar</div>
+                <div class="author-role">Freelance Marketer, Vijayawada</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"I run a real estate business in Hyderabad. After joining this course, I started running my own Facebook Ads and cut my marketing costs by 40%. Excellent practical training."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#14B8A6;">SP</div>
+              <div>
+                <div class="author-name">Sridhar Prasad</div>
+                <div class="author-role">Real Estate Business, Hyderabad</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"As a fresher, I was worried I couldn't understand complex marketing concepts — but the Telugu explanation made it 10x easier. Got placed in a digital marketing agency in Visakhapatnam!"</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#0F172A;">PL</div>
+              <div>
+                <div class="author-name">Priya Lakshmi</div>
+                <div class="author-role">Digital Marketing Executive, Vizag</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"The AI tools section was a game-changer. I now automate my content calendar and ad creatives using ChatGPT workflows taught in this course. Saved 10+ hours per week."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#7C3AED;">AR</div>
+              <div>
+                <div class="author-name">Anand Reddy</div>
+                <div class="author-role">Content Creator, Guntur</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"Worth every rupee. The Meta Ads module alone is better than any ₹20,000 course I've seen. And the price at ₹4,999 is unbelievably affordable for what you get."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#EA580C;">NM</div>
+              <div>
+                <div class="author-name">Naveen Mohan</div>
+                <div class="author-role">Agency Owner, Nellore</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"Joined as a working professional wanting to upskill. The live sessions fit around my schedule and the recordings helped me revise. Highly recommend to anyone in AP/TG market."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#16A34A;">VD</div>
+              <div>
+                <div class="author-name">Vani Devi</div>
+                <div class="author-role">Working Professional, Tirupati</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;">
+          <button class="card-cta" style="width:auto;padding:14px 32px;border-radius:10px;display:inline-flex;font-size:15px;">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+            Join the Community — Enroll Now
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div id="page-contact" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-title">We're Here to Help</h2>
+        <p class="section-sub">Have questions about the course or services? Reach out via WhatsApp or fill the form below.</p>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div>
+              <div>
+                <div class="contact-detail-label">WhatsApp / Phone</div>
+                <div class="contact-detail-value">+91 97016 30881</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value">aitelugudigitalmarketing@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div>
+              <div>
+                <div class="contact-detail-label">Instagram</div>
+                <div class="contact-detail-value">@ai_telugudigitalmarketing</div>
+              </div>
+            </div>
+            <div style="margin-top:2rem;">
+              <a class="btn-primary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." style="display:inline-flex;gap:8px;">
+                <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+                Message on WhatsApp
+              </a>
+            </div>
+          </div>
+          <form class="contact-form-card" action="https://formsubmit.co/aitelugudigitalmarketing@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Website Lead">
+<input type="hidden" name="_captcha" value="false">
+            <div class="form-title">Send us a message</div>
+            <div class="form-field">
+              <label class="form-label">Full Name</label>
+              <input class="form-input" type="text" placeholder="Your name">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Phone Number</label>
+              <input class="form-input" type="tel" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Interested In</label>
+              <select class="form-select">
+                <option>AI Digital Marketing Course</option>
+                <option>Meta Ads Management</option>
+                <option>Free Consultation</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label">Message</label>
+              <textarea class="form-input" rows="3" placeholder="Tell us about your goals..."></textarea>
+            </div>
+            <button type="submit" class="whatsapp-btn-big">
+              <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+              Submit Enquiry
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== PRIVACY ========== -->
+  <div id="page-privacy" class="page-view">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">Legal</div>
+        <h2 class="section-title">Privacy Policy</h2>
+        <div class="privacy-content">
+          <p>Effective Date: June 2026 | Last Updated: June 2026</p>
+          <p>This Privacy Policy explains how AI Telugu Digital Marketing ("we", "us", "our") collects, uses, and protects your personal information when you use our website and services.</p>
+          <h3>Information We Collect</h3>
+          <p>We collect the following types of information:</p>
+          <ul>
+            <li>Name, phone number, and email address when you enroll or contact us</li>
+            <li>WhatsApp interaction data when you message us directly</li>
+            <li>Usage data and cookies for website performance analysis</li>
+          </ul>
+          <h3>How We Use Your Information</h3>
+          <ul>
+            <li>To process course enrollments and provide training services</li>
+            <li>To send updates about batch schedules and course materials</li>
+            <li>To respond to your inquiries and consultations</li>
+            <li>To improve our website and marketing effectiveness</li>
+          </ul>
+          <h3>Data Sharing</h3>
+          <p>We do not sell, trade, or rent your personal information to third parties. We may use trusted tools like Google Analytics and Meta Pixel for marketing analytics.</p>
+          <h3>Your Rights</h3>
+          <p>You may request access, correction, or deletion of your personal data by contacting us at aitelugudigitalmarketing@gmail.com or WhatsApp +91 97016 30881.</p>
+          <h3>Cookies</h3>
+          <p>Our website uses basic cookies for analytics. You may disable cookies in your browser settings, though this may affect some website features.</p>
+          <h3>Contact</h3>
+          <p>For any privacy concerns, contact: aitelugudigitalmarketing@gmail.com | +91 97016 30881</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA SECTION (shared footer of pages) -->
+  <div class="cta-section">
+    <div class="price-tag">Launch Offer — <strong>₹4,999</strong> &nbsp;·&nbsp; Original: <s>₹14,999</s></div>
+    <h2>Start Your Digital Marketing<br>Journey Today</h2>
+    <p>Join 500+ Telugu-speaking professionals learning AI-powered marketing skills that actually pay.</p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        Enroll Now — ₹4,999
+      </a>
+      <a class="btn-secondary" href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15);color:white;">
+        Book Free Consultation
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;">
+              <path d="M40 8 L68 24 L68 44 L40 32 L12 44 L12 24 Z" fill="#2563EB"/>
+              <path d="M40 32 L68 44 L68 64 L40 52 L12 64 L12 44 Z" fill="rgba(255,255,255,0.2)"/>
+              <path d="M28 58 L40 64 L52 58 L40 52 Z" fill="#14B8A6"/>
+            </svg>
+            <div class="footer-brand-name"><span>AI</span> Telugu Digital Marketing</div>
+          </div>
+          <div class="footer-tagline">LEARN • AUTOMATE • GROW</div>
+          <div class="footer-desc">AI-powered digital marketing education platform for Telugu-speaking professionals in AP & Telangana.</div>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('home');return false;">Home</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('course');return false;">Course</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('services');return false;">Services</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('about');return false;">About</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('testimonials');return false;">Testimonials</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('contact');return false;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">+91 97016 30881</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">aitelugudigitalmarketing@gmail.com</a></li>
+            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">@ai_telugudigitalmarketing</a></li>
+            <li style="margin-top:12px;"><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 AI Telugu Digital Marketing. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('privacy');return false;">Privacy Policy</a>
+          <a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+    const target = document.getElementById('page-' + id);
+    if (target) target.classList.add('active');
+    const tabs = document.querySelectorAll('.page-tab');
+    tabs.forEach(t => {
+      if (t.textContent.toLowerCase().includes(id) ||
+         (id === 'testimonials' && t.textContent.toLowerCase().includes('review'))) {
+        t.classList.add('active');
+      }
+    });
+    window.scrollTo(0, 0);
+  }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('.stat-number');
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counter = entry.target;
+const original = counter.innerHTML;
+
+let target = 0;
+
+if (original.includes('500')) target = 500;
+else if (original.includes('12')) target = 12;
+else if (original.includes('4,999')) target = 4999;
+else if (original.includes('100')) target = 100;
+
+let current = 0;
+const step = target / 60;
+
+function animate() {
+current += step;
+
+if (current < target) {
+if (original.includes('₹')) {
+counter.innerHTML = '₹' + Math.floor(current).toLocaleString();
+} else if (original.includes('%')) {
+counter.innerHTML = Math.floor(current) + '<span>%</span>';
+} else {
+counter.innerHTML = Math.floor(current) + '<span>+</span>';
+}
+requestAnimationFrame(animate);
+} else {
+counter.innerHTML = original;
+}
+}
+
+animate();
+observer.unobserve(counter);
+}
+});
+});
+
+counters.forEach(counter => observer.observe(counter));
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card-cta,.btn-primary,.btn-teal,.nav-cta').forEach(el => {
+    el.addEventListener('click', function(e) {
+      window.open('https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20your%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.', '_blank');
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+ const counters=document.querySelectorAll('.stat-number');
+
+ const animateCounter=(el)=>{
+   const original=el.getAttribute('data-original')||el.innerHTML;
+   el.setAttribute('data-original',original);
+
+   let target=0;
+   if(original.includes('500')) target=500;
+   else if(original.includes('12')) target=12;
+   else if(original.includes('4,999')) target=4999;
+   else if(original.includes('100')) target=100;
+   else return;
+
+   let current=0;
+   const step=Math.max(target/50,1);
+
+   function run(){
+      current+=step;
+      if(current<target){
+        if(original.includes('₹')){
+          el.innerHTML='₹'+Math.floor(current).toLocaleString();
+        }else if(original.includes('%')){
+          el.innerHTML=Math.floor(current)+'<span>%</span>';
+        }else{
+          el.innerHTML=Math.floor(current)+'<span>+</span>';
+        }
+        requestAnimationFrame(run);
+      }else{
+        el.innerHTML=original;
+      }
+   }
+   run();
+ };
+
+ const observer=new IntersectionObserver((entries)=>{
+   entries.forEach(entry=>{
+      if(entry.isIntersecting){
+         animateCounter(entry.target);
+      }
+   });
+ },{threshold:0.5});
+
+ counters.forEach(c=>observer.observe(c));
+});
+</script>
