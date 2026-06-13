@@ -251,64 +251,6 @@ counters.forEach(counter => observer.observe(counter));
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.card-cta,.btn-primary,.btn-teal,.nav-cta').forEach(el => {
-    el.addEventListener('click', function(e) {
-      window.open('https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20your%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details.', '_blank');
-    });
-  });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', ()=>{
- const counters=document.querySelectorAll('.stat-number');
-
- const animateCounter=(el)=>{
-   const original=el.getAttribute('data-original')||el.innerHTML;
-   el.setAttribute('data-original',original);
-
-   let target=0;
-   if(original.includes('500')) target=500;
-   else if(original.includes('12')) target=12;
-   else if(original.includes('4,999')) target=4999;
-   else if(original.includes('100')) target=100;
-   else return;
-
-   let current=0;
-   const step=Math.max(target/50,1);
-
-   function run(){
-      current+=step;
-      if(current<target){
-        if(original.includes('₹')){
-          el.innerHTML='₹'+Math.floor(current).toLocaleString();
-        }else if(original.includes('%')){
-          el.innerHTML=Math.floor(current)+'<span>%</span>';
-        }else{
-          el.innerHTML=Math.floor(current)+'<span>+</span>';
-        }
-        requestAnimationFrame(run);
-      }else{
-        el.innerHTML=original;
-      }
-   }
-   run();
- };
-
- const observer=new IntersectionObserver((entries)=>{
-   entries.forEach(entry=>{
-      if(entry.isIntersecting){
-         animateCounter(entry.target);
-      }
-   });
- },{threshold:0.5});
-
- counters.forEach(c=>observer.observe(c));
-});
-</script>
-
-<script>
 document.addEventListener('DOMContentLoaded',()=>{
 const counters=document.querySelectorAll('.stat-number[data-target]');
 const run=(el)=>{
@@ -326,6 +268,16 @@ counters.forEach(c=>obs.observe(c));
 });
 </script>
 
+<script src="main.js"></script>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  if(menu){
+    menu.classList.toggle('show');
+  }
+}
+</script>
+
 </body>
 </html>
-</div><script src="main.js"></script></body></html>
