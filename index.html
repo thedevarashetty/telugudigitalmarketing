@@ -105,7 +105,7 @@
           <div class="stat-label">Modules Covered</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">₹4,999</div>
+          <div class="stat-number">₹0</div>
           <div class="stat-label">Launch Price</div>
         </div>
         <div class="stat-item">
@@ -239,11 +239,11 @@ let target = 0;
 
 if (original.includes('500')) target = 500;
 else if (original.includes('12')) target = 12;
-else if (original.includes('4,999')) target = 4999;
+else if (counter.parentElement.textContent.includes('Launch Price')) target = 4999;
 else if (original.includes('100')) target = 100;
 
 let current = 0;
-const step = target / 60;
+const step = Math.max(target / 120, 1);
 
 function animate() {
 current += step;
