@@ -879,9 +879,18 @@ font-size:11px;
 line-height:1.1;
 }
 
-.nav-links,
 .nav-cta{
-display:none !important;
+  display:block !important;
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  padding:6px 10px;
+  font-size:12px;
+}
+
+.nav-links{
+  display:none !important;
 }
 
 .mobile-menu-btn{
