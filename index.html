@@ -105,7 +105,7 @@
           <div class="stat-label">Modules Covered</div>
         </div>
         <div class="stat-item">
-         <div class="stat-number" data-target="4999">₹0</div>
+       <div class="stat-number">₹4,999</div>
           <div class="stat-label">Launch Price</div>
         </div>
         <div class="stat-item">
@@ -243,7 +243,7 @@ else if (original.includes('4999')) target = 4999;
 else if (original.includes('100')) target = 100;
 
 let current = 0;
-const step = Math.max(target / 120, 1);
+const step = target / 60;
 
 function animate() {
 current += step;
