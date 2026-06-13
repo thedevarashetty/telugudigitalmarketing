@@ -194,23 +194,6 @@
 </div>
 
 <script>
-  function showPage(id) {
-    document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
-    const target = document.getElementById('page-' + id);
-    if (target) target.classList.add('active');
-    const tabs = document.querySelectorAll('.page-tab');
-    tabs.forEach(t => {
-      if (t.textContent.toLowerCase().includes(id) ||
-         (id === 'testimonials' && t.textContent.toLowerCase().includes('review'))) {
-        t.classList.add('active');
-      }
-    });
-    window.scrollTo(0, 0);
-  }
-</script>
-
-<script>
 document.addEventListener('DOMContentLoaded', function() {
 const counters = document.querySelectorAll('.stat-number');
 
