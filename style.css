@@ -940,6 +940,52 @@ text-align:center;padding:1.2rem;border-radius:16px;transition:all .4s ease;curs
   }
 }
 
+.mobile-menu-btn{
+display:none;
+}
+
+.mobile-menu{
+display:none;
+}
+
+@media (max-width:768px){
+
+.mobile-menu-btn{
+display:block;
+background:none;
+border:none;
+font-size:28px;
+cursor:pointer;
+}
+
+.nav-links{
+display:none !important;
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+position:fixed;
+top:64px;
+left:0;
+width:100%;
+background:white;
+padding:15px;
+z-index:9998;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.mobile-menu.show{
+display:flex;
+}
+
+.mobile-menu a{
+text-decoration:none;
+color:#0F172A;
+padding:12px 0;
+font-weight:600;
+}
+}
 
 /* RESPONSIVE DEVICE ADAPTATION */
 @media (max-width:1024px){
