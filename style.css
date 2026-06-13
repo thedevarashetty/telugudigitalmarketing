@@ -949,6 +949,29 @@ display:none;
 }
 
 @media (max-width:768px){
+nav{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.nav-logo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+}
+
+.mobile-enroll-btn{
+display:block;
+background:#2563EB;
+color:#fff;
+text-decoration:none;
+padding:8px 12px;
+border-radius:8px;
+font-size:12px;
+font-weight:700;
+}
 
 .mobile-menu-btn{
 display:block;
@@ -980,10 +1003,20 @@ display:flex;
 }
 
 .mobile-menu a{
-text-decoration:none;
-color:#0F172A;
-padding:12px 0;
-font-weight:600;
+  text-decoration:none;
+  color:#0F172A;
+  padding:12px 0;
+  font-weight:600;
+}
+
+.nav-cta{
+  display:none !important;
+}
+
+.mobile-enroll-btn{
+  display:block;
+}
+
 }
 }
 
