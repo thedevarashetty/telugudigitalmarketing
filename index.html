@@ -243,9 +243,7 @@ else if (original.includes('4999')) target = 4999;
 else if (original.includes('100')) target = 100;
 
 let current = 0;
-const duration = 2000;
-const fps = 60;
-const step = target / (duration / (1000 / fps));
+const step = target / 60;
 
 function animate() {
 current += step;
