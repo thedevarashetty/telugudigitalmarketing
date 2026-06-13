@@ -140,12 +140,12 @@
         <div>
           <div class="footer-col-title">Pages</div>
           <ul class="footer-links">
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('home');return false;">Home</a></li>
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('course');return false;">Course</a></li>
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('services');return false;">Services</a></li>
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('about');return false;">About</a></li>
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('testimonials');return false;">Testimonials</a></li>
-            <li><a href="https://wa.me/919701630881?text=Hi%20AI%20Telugu%20Digital%20Marketing,%20I'm%20interested%20in%20the%20%E2%82%B94999%20AI%20Digital%20Marketing%20Course.%20Please%20share%20the%20details." onclick="showPage('contact');return false;">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
@@ -169,23 +169,6 @@
   </footer>
 
 </div>
-
-<script>
-  function showPage(id) {
-    document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
-    const target = document.getElementById('page-' + id);
-    if (target) target.classList.add('active');
-    const tabs = document.querySelectorAll('.page-tab');
-    tabs.forEach(t => {
-      if (t.textContent.toLowerCase().includes(id) ||
-         (id === 'testimonials' && t.textContent.toLowerCase().includes('review'))) {
-        t.classList.add('active');
-      }
-    });
-    window.scrollTo(0, 0);
-  }
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
