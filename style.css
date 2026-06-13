@@ -893,20 +893,20 @@ z-index:10001;
 }
 
 .mobile-menu{
-display:none;
-flex-direction:column;
-position:fixed;
-top:64px;
-left:0;
-width:100%;
-background:#fff;
-padding:15px;
-z-index:9998;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+  display:none !important;
+  flex-direction:column;
+  position:fixed;
+  top:64px;
+  left:0;
+  width:100%;
+  background:#fff;
+  padding:15px;
+  z-index:9998;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .mobile-menu.show{
-display:flex;
+  display:flex !important;
 }
 
 .mobile-menu a{
