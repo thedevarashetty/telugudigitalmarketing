@@ -840,113 +840,6 @@ text-align:center;padding:1.2rem;border-radius:16px;transition:all .4s ease;curs
   }
 
 /* ===== MOBILE RESPONSIVE FIXES ===== */
-@media (max-width: 768px) {
-  nav {
-    padding: 0 1rem;
-    height: auto;
-    min-height: 64px;
-  }
-
-  .nav-links,
-  .nav-cta {
-    display: none;
-  }
-
-  .hero,
-  .section,
-  .cta-section,
-  footer {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .hero {
-    padding-top: 3rem;
-  }
-
-  .hero-inner,
-  .services-layout,
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero-sub {
-    max-width: 100%;
-  }
-
-  .stats-inner,
-  .audience-grid,
-  .curriculum-grid,
-  .testimonials-grid,
-  .footer-top {
-    grid-template-columns: 1fr !important;
-  }
-
-  .modules-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-tabs {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    scrollbar-width: thin;
-  }
-
-  .page-tab {
-    flex: 0 0 auto;
-  }
-
-  .footer-bottom,
-  .cta-buttons,
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-primary,
-  .btn-secondary,
-  .card-cta,
-  .whatsapp-btn-big {
-    min-height: 44px;
-    justify-content: center;
-  }
-
-  .service-card,
-  .contact-form-card,
-  .hero-card {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .hero-inner {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .audience-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.mobile-menu-btn{
-display:none;
-}
-
-.mobile-menu{
-display:none;
-}
 
 @media (max-width:768px){
 
@@ -977,51 +870,18 @@ font-size:11px;
 line-height:1.1;
 }
 
-.mobile-menu-btn{
-display:block;
-background:none;
-border:none;
-font-size:28px;
-cursor:pointer;
-z-index:10001;
-}
-
-.mobile-enroll-btn{
-display:block;
-background:#2563EB;
-color:#fff;
-text-decoration:none;
-padding:8px 10px;
-border-radius:8px;
-font-size:11px;
-font-weight:700;
-z-index:10001;
-}
-
-}
-
-
-.mobile-enroll-btn{
-display:block;
-background:#2563EB;
-color:#fff;
-text-decoration:none;
-padding:8px 12px;
-border-radius:8px;
-font-size:12px;
-font-weight:700;
-}
-
-.mobile-menu-btn{
-display:block;
-background:none;
-border:none;
-font-size:28px;
-cursor:pointer;
-}
-
-.nav-links{
+.nav-links,
+.nav-cta{
 display:none !important;
+}
+
+.mobile-menu-btn{
+display:block;
+background:none;
+border:none;
+font-size:28px;
+cursor:pointer;
+z-index:10001;
 }
 
 .mobile-menu{
@@ -1031,7 +891,7 @@ position:fixed;
 top:64px;
 left:0;
 width:100%;
-background:white;
+background:#fff;
 padding:15px;
 z-index:9998;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
@@ -1042,21 +902,101 @@ display:flex;
 }
 
 .mobile-menu a{
-  text-decoration:none;
-  color:#0F172A;
-  padding:12px 0;
-  font-weight:600;
+text-decoration:none;
+color:#0F172A;
+padding:12px 0;
+font-weight:600;
 }
 
-.nav-cta{
-  display:none !important;
+.hero,
+.section,
+.cta-section,
+footer{
+padding-left:1rem;
+padding-right:1rem;
 }
 
-.mobile-enroll-btn{
-  display:block;
+.hero{
+padding-top:3rem;
 }
 
+.hero-inner,
+.services-layout,
+.about-grid,
+.contact-grid{
+grid-template-columns:1fr !important;
+gap:2rem;
 }
+
+.hero h1{
+font-size:2rem;
+}
+
+.hero-sub{
+max-width:100%;
+}
+
+.stats-inner,
+.audience-grid,
+.curriculum-grid,
+.testimonials-grid,
+.footer-top{
+grid-template-columns:1fr !important;
+}
+
+.modules-grid{
+grid-template-columns:1fr;
+}
+
+.page-tabs{
+overflow-x:auto;
+white-space:nowrap;
+width:100%;
+scrollbar-width:thin;
+}
+
+.page-tab{
+flex:0 0 auto;
+}
+
+.footer-bottom,
+.cta-buttons,
+.hero-actions{
+flex-direction:column;
+align-items:stretch;
+}
+
+.btn-primary,
+.btn-secondary,
+.card-cta,
+.whatsapp-btn-big{
+min-height:44px;
+justify-content:center;
+}
+
+.service-card,
+.contact-form-card,
+.hero-card{
+padding-left:1rem;
+padding-right:1rem;
+}
+}
+
+@media (min-width:769px) and (max-width:1024px){
+
+.hero-inner{
+grid-template-columns:1fr 1fr;
+}
+
+.audience-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.testimonials-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
 
 /* RESPONSIVE DEVICE ADAPTATION */
 @media (max-width:1024px){
