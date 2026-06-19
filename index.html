@@ -298,7 +298,13 @@ const counters=document.querySelectorAll('.stat-number[data-target]');
 const run=(el)=>{
  let target=parseInt(el.dataset.target),cur=0;
  const step=()=>{cur+=Math.ceil(target/60); if(cur>target) cur=target;
- el.textContent=(el.dataset.target=="4999"?"₹":"")+cur+(target!=4999?"+":"");
+ if(target == 100){
+  el.textContent = cur + "%";
+} else if(target == 4999){
+  el.textContent = "₹" + cur;
+} else {
+  el.textContent = cur + "+";
+}
  if(cur<target) requestAnimationFrame(step);
  };
  step();
